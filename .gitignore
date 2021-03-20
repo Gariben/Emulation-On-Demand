@@ -1,0 +1,273 @@
+# Pretty Greedy .gitignore for all common rom extension.
+# Revise as necessary.
+
+*.mbz #Pogoshell NES emulator plugin
+*.rom #Read Only Memory image
+*.tap #ZX Spectrum tape image
+*.z64 #Nintendo 64 game ROM
+*.smd #Sega Genesis ROM emulator data
+*.gba #Nintendo Game Boy Advance ROM image
+*.nes #Nintendo Entertainment System ROM image
+*.dms #Amiga compressed archive
+*.smc #Super Nintendo game-console ROM image
+*.n64 #Nintendo 64 Emulation ROM image
+*.nds #Nintendo DS game ROM image
+*.pie #Glove programmable input emulator data
+*.dat #Game data
+*.g64 #C64 emulator disk image
+*.s19 #Motorola EEPROM programming data
+*.ups #VisualBoyAdvance UPS patch
+*.st #Atari disk image
+*.x64 #Commodore 64 emulator disk image
+*.ggs #Gameboy emulator data
+*.gcz #Dolphin emulator archive
+*.fig #Super Nintendo game-console ROM image
+*.dgz #Dega saved state
+*.atr #Atari 8-bit disk image
+*.pp #Amiga compressed archive
+*.kim #Commodore KIM-1 image
+*.tzx #ZX Spectrum tape image poke
+*.gb #Nintendo Gameboy ROM image
+*.ttp #Atari Falcon application
+*.hdf #Amiga hard disk image
+*.cxarchive #CrossOver bottle file
+*.mdr #ZX Spectrum microdrive emulator data
+*.trd #ZX Spectrum floppy disk image
+*.gbc #Nintendo Game Boy Color emulator ROM image
+*.mdv #QLAY image
+*.sfc #Nintendo SNES9x ROM image
+*.m64 #Mupen64 movie capture
+*.lha #LH ARC compressed archive
+*.pj #Project64 game progress
+*.68k #Sega Mega Drive ROM image
+#*.bin #Atari 2600 game ROM image
+*.srm #Super Nintendo ROM saved game
+*.chd #MAME compressed ROM image
+*.d64 #Commodore emulator data
+*.zs2 #ZSNES slot 2 saved state
+*.iso #ePSXe Sony Playstation game image
+*.mcr #ePSXe memory card data
+*.zpak #Sony Ericsson Xperia Play game pack file
+*.sna #ZX80 Spectrum Mirage emulator snapshot
+*.fdi #Floppy disk image
+*.zxt #ZX Spectrum emulator data
+*.ss0 #GameBoid first saving slot
+*.v64 #Nintendo 64 emulation ROM image
+*.brm #Kega Fusion RAM backup
+*.pok #ZX Spectrum emulator poke
+*.sgs #WinDS PRO data
+*.fsk #Atari 8-bit cassette image
+*.snap #ZX Spectrum emulator Mirage Microdrive snapshot
+*.pat #Kega Fusion game cheat
+*.zx #KGB ZX Spectrum emulator snapshot
+*.a26 #Atari 2600 ROM image
+*.sf7 #Sega SF-7000 ROM image
+*.ltp #ZX Spectrum emulator program
+*.p00 #C64 emulator data
+*.itv #Nostalgia Emulator Intellivision ROM image
+*.lzx #Amiga LZX archive file
+*.cdz #pSX emulator compressed CD image
+*.dst #DeSmuME saved state
+#.bin #Nintendo DS binary data
+*.rp9 #RetroPlatform data
+*.gs0 #Sega Genesis (Megadrive) emulator quick slot 0 saved game
+*.t64 #Commodore 64 emulator tape
+*.l64 #64LAN image
+*.81 #ZX Spectrum emulator data
+*.z80 #ZX Spectrum Emulator memory snapshot
+*.unf #Universal NES Image Format
+*.dck #Warajevo ZX Spectrum emulation data
+*.ps2 #PCSX2 memory card data
+*.vms #Dreamcast VMU save file
+*.d81 #Commodore VC-1581 diskette emulator image
+*.jsf #Project64 joystick settings
+*.ngp #Neo Geo Pocket ROM image
+*.mgt #ZX Spectrum emulator disk image
+*.c64 #Commodore 64 ROM image
+*.u00 #Commodore C64 universal data
+*.scl #ZX Spectrum emulator disk image
+*.gen #Sega Genesis ROM image
+*.iie #SimIIe emulator data
+*.rdb #N64 Nintendo 64 ROM database
+*.d71 #Commodore emulator data
+*.cht #ZSNES cheat code
+*.dsv #DeSmuME saved game
+*.zxs #ZX Spectrum emulator ZX32 snapshot file
+*.dess #Microsoft Device Emulator saved state
+*.1 #Super Nintendo split ROM image
+*.hun #Personal Paint Hungarian language user interface
+*.d80 #Commodore CBM-8050 diskette emulator image
+*.zm2 #ZSNES movie #2
+*.$1 #ZX Spectrum HOBETA format
+*.pj1 #Project64 saved game
+*.j64 #Virtual Jaguar ROM image
+*.gsx #Gens Sega emulator saved state
+*.bii #Basilisk II data
+*.fxe #GeePee32 data
+*.snes #Super Ninento game image
+*.adf #Amiga disk format
+*.jmv #Jnes record
+*.adz #Amiga emulator compressed ADF data
+*.vmv #VirtualNES or VisualBoyAdvance file
+*.reu #Commodore C64 REU image
+*.nez #NES ROM emulator image
+*.vbm #Visual Boy Advance movie capture format
+*.d82 #Commodore emulator data
+*.64c #Commodore C64 Emulator data or font
+*.gba.ds #DeSmuME ROM image
+*.mpk #Project64 memory pack
+*.jma #NSRT compressed game data
+*.d88 #Toshiba Pasopia 7 disk data
+*.xex #Atari program executable
+*.xdf #X68000 image
+*.gbaskin #GBA4iOS controller skin
+*.dsk #ZX Spectrum emulator data
+*.nd5 #Nintendo DS game ROM image
+*.szx #ZX Spectrum emulator ZX-state snapshot
+*.qd #SHARP MZ-series emulator data
+*.scr #ZX Spectrum standard screen
+*.zs4 #ZSNES slot 4 save state
+*.dhf #AMIGA emulator disk image ROM file
+*.ds3 #WinDS PRO data
+*.frz #Snes9x saved state file
+*.gs4 #Genecyst saved state slot 4
+*.d41 #CCS64 data
+*.ic8 #Neo Geo BIOS image
+*.crt #Commodore emulator data
+*.gmb #WinDS PRO file
+*.ds9 #WinDS PRO data
+*.uss #WinUAE saved state
+*.t81 #EightyOne ROM image
+*.nv #MAME NVRAM data
+*.d67 #VICE disk image
+*.dgn #Dragon 32 emulator file
+*.ds10 #WinDS PRO data
+*.sta #MAME saved state
+*.agb #Game Boy Advance ROM image
+*.mcc #Amiga MUI external class library
+*.snapshot #ZX Spectrum emulator Mirage Microdrive snapshot
+*.gg #Sega GameGear game ROM image
+*.inp #MAME replay
+*.rp2 #RetroPlatform Player (Amiga Forever) file
+*.32x #Sega GENESIS ROM image file
+*.swc #Super Nintendo Super Wildcard ROM image
+*.smv #Snes9x movie capture
+*.s28 #Genesis or Sega32X ROM image
+*.cpr #CPC Plus cartridge image
+*.cas #Atari cassette image
+*.uef #Unified Emulator Format
+*.ptp #Primo Computer Emulator tape image
+*.srm #Kega Fusion game RAM data
+*.svs #gpSP Game Boy Advance emulator saved state
+*.zm? #ZSNES movie
+*.unif #Universal NES Image Format ROM image
+*.sa1 #Nintendo Game Boy emulator saved state
+*.sc #Sega SC-3000 image
+*.whd #WinUAEX WHDLoad settings
+*.fds #Nintendo Famicom (NES) disk system audio data
+*.boxer #Boxer for Mac game archive file
+*.poo #Commodore C64 machine code
+*.psx #Sony PlayStation saved game
+*.hdz #Amiga hard disk image
+*.gci #Nintendo GameCube saved game
+*.gbcskin #GBA4iOS controller skin
+*.zs1 #ZSNES slot 1 saved state
+*.mcd #Bleem! memory card save
+*.p #ZX81 picture image
+*.pro #APE Atari disk image
+*.zmv #ZSNES movie data
+*.500 #Pasofami data
+*.lhz #LHA Compressed file archive
+*.prg #SHARP MZ-series emulator data
+*.san #ZX Spectrum emulator file
+*.harddisk #Boxer for Mac harddisk image
+*.vgs #Virtual Game Station memory card save
+*.sp #ZX Spectrum emulator source profile
+*.ds1 #DeSmuME saved state
+*.nmm #Nightmare module
+*.$b #TR-DOS basic file format
+*.a83 #EightyOne Sinclair ZX81 ROM image
+*.cgb #Gameboy color data
+*.gme #Interact DexDrive memory card saved state
+*.pol #Personal Paint polish language user interface
+*.zsg #GENS zipped Sega Genesis ROM
+*.carc #Nintendo DS compressed archive
+*.zm1 #ZSNES movie #1
+*.adx #Sega Dreamcast audio data
+*.mc #PlaySaver and PSEmuPro memory card save and single game save file
+*.t88 #NEC PC-88 tape image
+*.posc #Pentagon 1024 overscan
+*.raw #ZX Spectrum memory dump
+*.img #ZX Spectrum emulator disk image
+*.lnx #Atari Lynx ROM image file
+*.slt #ZX Spectrum emulator Super Level Loader snapshot file
+*.wdf #Wiimm Nintendo Wii disc file
+*.hpf #HP9100A program
+*.fdd #ZX Spectrum emulator data
+*.mix #Don Knuth's MMIX emulator file
+*.64b #Commodore C64 emulator data
+*.sgb #Super Game Boy image
+*.brtex #Wii BRTEX texture
+*.ipf #Interchangeable preservation data
+*.mdb #ZX Spectrum emulator MB-02 disk format
+*.500 #Nintendo Famicom Disk System
+*.gbc #WinDS PRO data
+*.n80 #P-88 memory data
+*.zs7 #ZSNES slot 7 saved state
+*.qcf #Q-emuLator data
+*.zs9 #ZSNES slot 9 saved state
+*.sg #Sega SG-1000 image
+*.archimedes #Speccy ZX Spectrum emulator snapshot
+*.gnm #GNM Output music
+*.vb #Virtual Boy disk image
+*.dif #MAME CHD diff saved data
+*.sit #Sinclair ZX Spectrum emulator snapshot
+*.pdb #C64 emulator data
+*.zs6 #ZSNES slot 6 saved state
+*.gmv #Gens movie capture
+*.zs5 #ZSNES slot 5 saved state
+*.001 #Snes9x slot 2 saved game
+*.ds4 #DeSmuME saved state
+*.zs3 #ZSNES slot 3 saved state
+*.sem #ZX Spectrum-Emulator snapshot file
+*.opd #ZX Spectrum emulator data
+*.zm9 #ZSNES movie #9
+*.mzt #SHARP MZ-series emulator data
+*.epr #Z88 Disk ROM image
+*.prg #ZX Spectrum SpecEm snapshot
+*.dsk #SHARP MZ-series emulator data
+*.000 #Z80 Spectrum emulator data
+*.pcsxstate #PCSX emulator saved game
+*.pzx #Perfect ZX tape format
+*.$? #TR-DOS ZX Spectrum file in HOBETA format
+*.fam #Nintendo Entertainment System FamicomS emulator ROM image
+*.zx82 #ZX Spectrum emulator Speculator file
+*.rzx #ZX Spectrum emulator input-recording format
+*.pal #ZX SPECTRUM emulator data
+*.spc #J. Swiatek SP ZX Spectrum emulator tape
+*.crg #Atari Jaguar Cinepak Chunky-format 16-bit RGB film file
+*.amf #Amiga metafile
+*.a64 #Nintendo 64 memory export file
+*.zs8 #ZSNES slot 8 saved state file
+*.blk #ZX Spectrum emulator data
+*.cdmedia #Boxer for Mac cd-rom image
+*.wdr #ZX Spectrum emulator data
+*.gs6 #Genecyst save state 6 file
+*.itm #ZX Spectrum emulator tape file
+*.snx #ZX-32 snapshot extended
+*.vmcz #Hyper-V imported virtual machine
+*.$d #TR-DOS data file format
+*.srg #Atari Jaguar Cinepak Smooth-format 16-bit RGB film file
+*.xadml #Amiga Forever XADML file
+*.cwz #PogoShell data
+*.zs0 #ZSNES slot 0 saved state file
+*.64d #C64 PC64 Emulator file
+*.zm4 #ZSNES Movie #4 file
+*.out #ZX Spectrum emulator data
+*.air #ZX Spectrum emulator input-recording format
+*.zm3 #ZSNES Movie #3 file
+*.fmv #Famtasia movie capture
+*.mem #Virtual Game Station memory data
+*.zm6 #ZSNES Movie #6 file
+*.zm8 #ZSNES Movie #8 file
+*.zm7 #ZSNES Movie #7 file
