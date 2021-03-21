@@ -6,7 +6,7 @@ import (
   "os"
   "os/exec"
   "runtime"
-  //"strings"
+  "strings"
 )
 
 var bDebug bool = true
@@ -47,6 +47,10 @@ func cmd_WaitForNewline(){
 	reader.ReadString('\n')
 }
 
+func windows_ReplaceSpaces(sPath string)(sOut string){
+	strings.Replace(sPath, sOut, "ky", 2)
+	return 
+}
 
 
 func main() {
@@ -56,11 +60,13 @@ func main() {
 	
 	//Initialize Dir variables
 	sDir_Default_Install := ""
+	//sDir_Default_GBA_Games := ""
 	
 	if sOS == "windows" {
 		//sDir_Default_Install = "\"C\\:Program Files\\RetroArch\\"
 		//Laptop Testing
 		sDir_Default_Install = "C:\\Users\\jacob\\Desktop\\Emulation\\Retroarch\\"
+		//sDir_Default_GBA_Games = "C:\\Users\\jacob\\Desktop\\Emulation\\GBA\\Games"
 	}else{
 		fmt.Println("ERROR: Unsupported Operating System. Only Windows is Supported.")
 		os.Exit(1)
@@ -84,6 +90,8 @@ func main() {
 			sArgs_RetroArch := "--help"
 			
 
+			//sGame := "Wario Land 4 (USA, Europe)"
+			
 			retroarch_LaunchGame(sPath_RetroArch, sArgs_RetroArch, true)
 
 			cmd_WaitForNewline()
