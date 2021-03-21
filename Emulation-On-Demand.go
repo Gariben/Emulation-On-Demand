@@ -18,7 +18,7 @@ func retroarch_LaunchGame(sPath string, sFlags string, bPrintOutput bool){
 			fmt.Println("DEBUG: Running Retroarch command:")
 			fmt.Println("\t> "+sPath+" "+sFlags)
 		}
-		c := exec.Command(sPath+" "+sFlags,)
+		c := exec.Command(sPath,sFlags)
 		stdout, err := c.Output()
 	
 
@@ -58,8 +58,9 @@ func main() {
 	sDir_Default_Install := ""
 	
 	if sOS == "windows" {
-		sDir_Default_Install = "\"C\\:Program Files\\RetroArch\\"
-	
+		//sDir_Default_Install = "\"C\\:Program Files\\RetroArch\\"
+		//Laptop Testing
+		sDir_Default_Install = "C:\\Users\\jacob\\Desktop\\Emulation\\Retroarch\\"
 	}else{
 		fmt.Println("ERROR: Unsupported Operating System. Only Windows is Supported.")
 		os.Exit(1)
@@ -79,7 +80,7 @@ func main() {
 	} else {
 		//Launcher--------------------------------------------------------------
 		if sOS == "windows" {
-			sPath_RetroArch := sDir_Default_Install + "retroarch.exe" + "\""
+			sPath_RetroArch := sDir_Default_Install + "retroarch.exe"
 			sArgs_RetroArch := "--help"
 			
 
