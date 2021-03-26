@@ -7,9 +7,11 @@ import (
   "os/exec"
   "runtime"
   "strings"
+  "strconv"
 )
 
 var bDebug bool = true
+var iIndention = 0
 var iVerbosity = 3
 
 //Verbosity 0 is End User
@@ -20,45 +22,97 @@ var iVerbosity = 3
 
 
 
-type structFilePath interface {
+type interfaceStructFuncs interface {
 //TODO: Make Cross OS
-
-	sGetFullDir() (sFullDir string){
-		sSliceBuild := ""
-		for _, dir := range sDir {
-			if runtime.GOOS == "windows"{
-				sSliceBuild += dir + "\\"	
-			}
-		}
-	}
-
-
-
-
-	msInstallation string
-	msDir string[]	//{"Program Files", "RetroArch"}
-	msExecutable string //retroarch.exe
-	msFullPath string //
-
+//Struct function
+	//sPrint() string
+	getFullDir() string
+	getFullPath() string
+	oneName(sName string)
+	printAll()
+	printConsole()
 }
 
-
 type structLocalizedString struct{
-	//Localized for regions
-	nameUSA string	//Super Nintendo
-	nameEUR string	//Super Famicom
-	nameJPN string	//Super Famicom
+	//Localized for three release regions
+	sUSA string	//Super Nintendo
+	sEUR string	//Super Famicom
+	sJPN string	//Super Famicom
 }
 
 type structConsole struct{
 	sAbbreviation string
-	sConsoleName LocalizedString
+	sConsoleName structLocalizedString
 	sCoreName string
 	sExtension string
 	sPath_Games string
 }
 
+
+type structFilePath struct{
+	sDir []string	//{"Program Files", "RetroArch"}
+	sExecutable string //retroarch.exe
+	sInstallation string //
+}
+
+//structLocalizedString funcs
+func (sLS *structLocalizedString)oneName(sName string) {
+	sLS.sUSA = sName
+	sLS.sEUR = sName
+	sLS.sJPN = sName
+}
+
+func (sLS structLocalizedString)printAll() {
+	fmt.Println("(USA): " + sLS.sUSA)
+	fmt.Println("(EUR): " + sLS.sEUR)
+	fmt.Println("(JPN): " + sLS.sJPN)
+}
+	
+
+
+//structConsoleFunctions
+func (sC structConsole)printConsole() {
+	fmt.Println( "***About this Console***")
+	fmt.Println("-Abbreviation: " + sC.sAbbreviation )
+	fmt.Println("-ConsoleName:")
+	sC.sConsoleName.printAll()
+	fmt.Println("-CoreName: " + sC.sCoreName )
+	fmt.Println("-Extension: " + sC.sExtension )
+}
+
+
+//structFilePath funcs
+//Merge these...
+func (sFP structFilePath)getFullDir() string {
+		sDir := sFP.sDir
+		sSliceFlat := ""
+		for _, dir := range sDir {
+			if runtime.GOOS == "windows"{
+				sSliceFlat += dir + "\\"	
+			}
+		}	
+		return sSliceFlat
+}
+
+func (sFP structFilePath)getFullPath() string {
+		sDir := sFP.sDir
+		sSliceFlat := ""
+		for _, dir := range sDir {
+			if runtime.GOOS == "windows"{
+				sSliceFlat += dir + "\\"	
+			}
+		}	
+		return sSliceFlat+sFP.sExecutable
+}
+
+
+//structLocalizedString funcs
+
 var iMessageCounter = 1
+//func indent() {
+//	strings.Repeat("\t", iIndention)
+//}
+
 func verbosePrint(iTextLVL int, sText string) {
 	if iTextLVL >= iVerbosity {
 		fmt.Println("* " + strconv.Itoa(iMessageCounter) + ")" + sText)
@@ -72,11 +126,13 @@ func verbosePrint(iTextLVL int, sText string) {
 
 
 func retroArch_TestInstall(sPath string, bPrintOutput bool){
+//run "retroarch --help" from installation to test installation, paths.
+	sFlags := "--help"
 
 	if runtime.GOOS == "windows" {
 		if bDebug==true {
 			fmt.Println("DEBUG: Running Retroarch command:")
-			fmt.Println("\t> "+sPath+" "+sFlags)
+			fmt.Println("\t> "+sPath + " " + sFlags)
 		}
 		c := exec.Command(sPath,sFlags)
 		stdout, err := c.Output()
@@ -126,66 +182,58 @@ func main() {
 
 	verbosePrint(3, "Initializing Directory and Executable variables.")
 	//Anything blank will be determined by OS.
-	sDir_EOD_Install := ""
-	sDir_RetroArch = ""
-	sExec_RetroArch = ""
+	
+	//Eventual Parent directory.
+	sPath_EOD_Install := ""
+	
 	
 	verbosePrint(3, "Initializing Console Structs.")
 	//Initialize Structs for Consoles
-	gba = new(Console)
-	gba.sConsoleUSAName_Full = "Gameboy Advance"
-	gba.sConsoleUSAName_Short = "GBA"
+	var gba *structConsole
+	gba = new(structConsole)
+	gba.sAbbreviation = "GBA"
+	gba.sConsoleName.oneName("Gameboy Advance")
 	gba.sCoreName = "EmuDonk"
-	gba.sRetroArchFlags = ""
 	gba.sExtension = ".gba"
-	gba.sPath = ""
-	gba.sPathGames = ""
-	gba.sPathSaves = ""
-	
 	
 	//snes = new(Console)
 	//snes.sConsoleNameUSA_Full = "Super Nintendo"
+	if iVerbosity >=3 {
+		iIndention++
+		gba.printConsole()
+		iIndention--
+	}
+	
+	var retroarch *structFilePath
+	retroarch = new(structFilePath)
+	
 	
 	if sOS == "windows" {
-
-		//Jacobu Laptop (for testing)
-
-		
-		//Jacobu Laptop
-		//sDir_Default_GBA_Games = "C:\\Users\\jacob\\Desktop\\Emulation\\GBA\\Games"
-		//sDir_Default_GBA_Games = "C:\\Emulation\\GBA\\Games"
-		
-		//sDir_EOD_Install = "\"C\\:Program Files\\RetroArch\\"
+	
 		verbosePrint(3, "Configuring WINDOWS system directories ")
-		sDir_EOD_Install := "C:\\Users\\jacob\\Desktop\\Emulation\\"
-		sDir_RetroArch = "Retroarch\\"
-		sExec_RetroArch = "retroarch.exe"
+		sPath_EOD_Install =""
+		
+		//Manual, for now...
+		retroarch.sDir = make([]string,3)
+		retroarch.sDir[0] = "\\"
+		retroarch.sDir[1] = "Program Files\\"
+		retroarch.sDir[2] = "RetroArch\\"
+		retroarch.sExecutable = "retroarch.exe"
 		
 		verbosePrint(3, "Configuring WINDOWS Emulator Paths.")
 		gba.sPath_Games = "\\GBA\\Games"
-		gba.sPath_Games = "\\GBA\\Games"
-		
-		var lConsoleList = []Console { gba }
 		
 		
-		
-		//RetroArch
-		retroArch_TestInstall()
-		
-		
-
-		
-
+		//Roll up installed consoles into list
+		//var lConsoleList = []*structConsole { gba }
 		
 		
 		
+		//Test RetroArch install
 		
 		
-		
-		
-		//Validate retroarch installation exists
-		
-		
+		//"C:\Program Files\RetroArch\retroarch.exe" --help
+		retroArch_TestInstall("\"C:" + sPath_EOD_Install + retroarch.getFullPath() + "\"", iVerbosity>=3)
 		//If command fails, search system for Retroarch
 		
 		
@@ -208,8 +256,6 @@ func main() {
 	} else {
 		//Launcher--------------------------------------------------------------
 		if sOS == "windows" {
-			sPath_RetroArch := sDir_Default_Install + "retroarch.exe"
-			sArgs_RetroArch := "--help"
 			
 			
 			//Search for Game
